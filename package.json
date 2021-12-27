@@ -1,0 +1,15 @@
+{
+  "name": "show-img-alt-bookmarklet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tomothy83/show-img-alt-bookmarklet.git",
+  "author": "Tomoaki Yasaka",
+  "license": "Unlicensed",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "uglify-es": "^3.3.9"
+  }
+}
