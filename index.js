@@ -4,7 +4,7 @@
     tooltip.style.cssText =
       "position:absolute;top:0;left:0;border-radius:3px;color:#ffffff;background:rgba(0,0,0,0.7);padding:5px 10px;";
     const tooltipText = document.createElement("span");
-    tooltipText.style.cssText = "user-select:all;";
+    tooltipText.style.cssText = "user-select:all;cursor:default;";
     tooltipText.textContent = alt;
     tooltip.appendChild(tooltipText);
     const clearBtn = document.createElement("span");
@@ -12,8 +12,13 @@
       "display:inline-block;background:rgba(200,200,200,0.4);font-size:smaller;border-radius:2px;padding:0 3px;cursor:pointer;margin-left:3px;";
     clearBtn.innerHTML = "&times;";
     tooltip.appendChild(clearBtn);
+    tooltip.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    });
     clearBtn.addEventListener("click", function (event) {
       event.preventDefault();
+      event.stopPropagation();
       this.parentNode.remove();
     });
     return tooltip;
